@@ -7,6 +7,7 @@
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
   <div id="container"></div>
+
   <script type="text/babel">
     const root = ReactDOM.createRoot(document.getElementById('container'))
 
@@ -17,7 +18,10 @@
 
       return <div>
         <button onClick={() => setCompany("sssn")}>click</button>
+
         <h1 className="props-class">Hello World!</h1>
+        <h2 className="props-class">Hello World!</h2>
+        <h3 className="props-class">Hello World!</h3>
 
         {
           company ?
@@ -31,7 +35,6 @@
         </button>
 
       </div>
-
     }
 
     debugger
