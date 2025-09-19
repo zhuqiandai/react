@@ -1,28 +1,41 @@
 <html>
-  <body>
-    <script src="../../../build/node_modules/react/umd/react.development.js"></script>
-    <script src="../../../build/node_modules/react-dom/umd/react-dom.development.js"></script>
-    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.js"></script> -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <div id="container"></div>
-    <script type="text/babel">
 
-      const root = ReactDOM.createRoot(document.getElementById("container"));
+<body>
+  <script src="../../../build/node_modules/react/umd/react.development.js"></script>
+  <!-- <script src="../../../build/node_modules/react-dom/umd/react-dom.development.js"></script> -->
+  <!-- <script src="../../../packages/react-dom/index.js"></script> -->
+  <!-- <script src="https://unpkg.com/babel-standalone@6/babel.js"></script> -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+  <div id="container"></div>
+  <script type="module">
+
+    import * as ReactDOM from '../../../packages/react-dom/index.js'
+
     function App() {
-
       const [count, setCount] = React.useState(0)
 
+      function handle() {
+        setCount(count + 1)
+      }
+
       return <div>
-    {count}</div>
+        <button onClick={handle}>increase</button>
+        {count}
+      </div>
     }
 
-      root.render(
-    <>
+    const root = ReactDOM.createRoot(document.getElementById("container"));
+    debugger
+
+    root.render(
+      <>
         <h1>Hello World!</h1>
         <h1>Hello World!</h1>
-    <App />
-    </>
-      );
-    </script>
-  </body>
+        <App />
+      </>
+    );
+  </script>
+</body>
+
 </html>
